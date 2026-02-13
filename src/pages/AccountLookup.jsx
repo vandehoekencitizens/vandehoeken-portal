@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from '@/components/UI/button';
 import { Card, CardContent } from '@/components/UI/card';
-import TransactionHistory from '@/components/TransactionHistory';
+import TransactionHistory from '@/components/UI/TransactionHistory';
 import PersonalizedDashboard from '@/components/PersonalizedDashboard';
 
 export default function AccountLookup() {
