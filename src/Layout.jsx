@@ -22,8 +22,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
   DropdownMenuLabel
-} from './components/ui/dropdown-menu'; // Fixed path
-import ChatAgent from './components/ChatAgent'; // Fixed path
+} from './components/UI/dropdown-menu'; // Fixed path
+import ChatAgent from './components/UI/ChatAgent'; // Fixed path
 
 export default function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
