@@ -10,8 +10,8 @@ import {
   CheckCircle,
   Loader2
 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/UI/card';
+import { Badge } from '@/components/UI/badge';
 import { format } from 'date-fns';
 
 export default function TransactionHistory({ userEmail }) {
