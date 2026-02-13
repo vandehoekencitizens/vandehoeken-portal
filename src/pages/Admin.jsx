@@ -12,11 +12,12 @@ import OfficesTab from '@/components/admin/OfficesTab';
 import MarketplaceTab from '@/components/admin/MarketplaceTab';
 import JobsTab from '@/components/admin/JobsTab';
 import HousesTab from '@/components/admin/HousesTab';
-import CarsTab from '@/components/admin/CarsTab';
-import FlightsTab from '@/components/admin/FlightsTab';
-import RailsTab from '@/components/admin/RailsTab';
-import PayrollTab from '@/components/admin/PayrollTab';
-import TransactionsTab from '@/components/admin/TransactionsTab';
+// Change these lines (around line 31-35):
+import CarsTab from "../components/admin/CarsTab";
+import FlightsTab from "../components/admin/FlightsTab";
+import RailsTab from "../components/admin/RailsTab";
+import PayrollTab from "../components/admin/PayrollTab";
+import TransactionsTab from "../components/admin/TransactionsTab";
 
 export default function Admin() {
   const [activeTab, setActiveTab] = useState('users');
