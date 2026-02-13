@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client'; // Updated relative path
 import { 
   User, 
   Wallet, 
@@ -13,11 +13,11 @@ import {
   Home as HomeIcon
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
-import { Button } from '@/components/UI/button';
-import { Card, CardContent } from '@/components/UI/card';
-import TransactionHistory from '@/components/UI/TransactionHistory';
-import PersonalizedDashboard from '@/components/UI/PersonalizedDashboard';
+import { createPageUrl } from '../utils'; // Updated relative path
+import { Button } from '../components/UI/button'; // Updated relative path
+import { Card, CardContent } from '../components/UI/card'; // Updated relative path
+import TransactionHistory from '../components/UI/TransactionHistory'; // Updated relative path
+import PersonalizedDashboard from '../components/UI/PersonalizedDashboard'; // Updated relative path
 
 export default function AccountLookup() {
   const [currentUser, setCurrentUser] = useState(null);
