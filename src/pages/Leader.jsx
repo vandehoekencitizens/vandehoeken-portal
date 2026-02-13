@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { base44 } from '@/api/base44Client';
 import { Shield, Sparkles, Eye } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/UI/button';
+import { Card, CardContent } from '@/components/UI/card';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
