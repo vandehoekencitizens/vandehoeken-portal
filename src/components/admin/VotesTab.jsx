@@ -4,7 +4,7 @@ import { base44 } from '@/api/base44Client';
 import { Plus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/UI/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/UI/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/UI/dialog';
 import { Input } from '@/components/UI/input';
 import { Label } from '@/components/UI/label';
 import { Textarea } from '@/components/UI/textarea';
