@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/UI/card';
 import { Input } from '@/components/UI/input';
 import { Label } from '@/components/UI/label';
 import { Textarea } from '@/components/UI/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/UI/select';
 import { toast } from 'sonner';
 
 export default function NotificationsTab() {
