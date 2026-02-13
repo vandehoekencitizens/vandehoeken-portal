@@ -14,7 +14,7 @@ import {
   Settings,
   FileText
 } from 'lucide-react';
-import { Button } from './components/ui/button'; // Fixed path
+import { Button } from './components/UI/button'; // Fixed path
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
