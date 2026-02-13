@@ -4,15 +4,14 @@ import { base44 } from '@/api/base44Client';
 import { Shield, Users } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/UI/tabs';
 
-import UsersTab from '@/components/admin/UsersTab';
-import NotificationsTab from '@/components/admin/NotificationsTab';
-import RequestsTab from '@/components/admin/RequestsTab';
-import VotesTab from '@/components/admin/VotesTab';
-import OfficesTab from '@/components/admin/OfficesTab';
-import MarketplaceTab from '@/components/admin/MarketplaceTab';
-import JobsTab from '@/components/admin/JobsTab';
-import HousesTab from '@/components/admin/HousesTab';
-// Change these lines (around line 31-35):
+import UsersTab from "../components/admin/UsersTab";
+import NotificationsTab from "../components/admin/NotificationsTab";
+import RequestsTab from "../components/admin/RequestsTab";
+import VotesTab from "../components/admin/VotesTab";
+import OfficesTab from "../components/admin/OfficesTab";
+import MarketplaceTab from "../components/admin/MarketplaceTab";
+import JobsTab from "../components/admin/JobsTab";
+import HousesTab from "../components/admin/HousesTab";
 import CarsTab from "../components/admin/CarsTab";
 import FlightsTab from "../components/admin/FlightsTab";
 import RailsTab from "../components/admin/RailsTab";
