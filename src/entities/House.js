@@ -1,4 +1,4 @@
-{
+export default {
   "name": "House",
   "type": "object",
   "properties": {
