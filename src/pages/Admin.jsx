@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client'; // Updated relative path
 import { Shield, Users } from 'lucide-react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/UI/tabs';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/UI/tabs'; // Updated relative path
 
 import UsersTab from "../components/admin/UsersTab";
 import NotificationsTab from "../components/admin/NotificationsTab";
@@ -38,7 +38,7 @@ export default function Admin() {
 
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <TabsList className="grid grid-cols-3 lg:grid-cols-13 w-full mb-8">
-            <TabsTrigger value="users"><Users className="w-4 h-4" />Users</TabsTrigger>
+            <TabsTrigger value="users"><Users className="w-4 h-4 mr-2" />Users</TabsTrigger>
             <TabsTrigger value="notifications">Notify</TabsTrigger>
             <TabsTrigger value="requests">Requests</TabsTrigger>
             <TabsTrigger value="votes">Votes</TabsTrigger>
