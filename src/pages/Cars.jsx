@@ -14,9 +14,9 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/UI/button';
+import { Input } from '@/components/UI/input';
+import { Card, CardContent } from '@/components/UI/card';
 import { toast } from 'sonner';
 
 export default function Cars() {
