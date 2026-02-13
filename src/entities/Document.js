@@ -1,4 +1,4 @@
-{
+export default {
   "name": "Document",
   "type": "object",
   "properties": {
