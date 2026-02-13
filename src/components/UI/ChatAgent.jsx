@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
 import { MessageCircle, X, Send, Loader2, MessageSquare } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { Button } from '@/components/UI/button';
+import { Input } from '@/components/UI/input';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/UI/card';
+import { ScrollArea } from '@/components/UI/scroll-area';
 
 export default function ChatAgent() {
   const [isOpen, setIsOpen] = useState(false);
