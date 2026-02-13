@@ -12,9 +12,9 @@ import {
   Home as HomeIcon // Added missing import
 } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import LoginStateWatcher from '@/components/LoginStateWatcher';
+import { Button } from '@/components/UI/button';
+import { Card, CardContent } from '@/components/UI/card';
+import LoginStateWatcher from '@/components/UI/LoginStateWatcher';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
