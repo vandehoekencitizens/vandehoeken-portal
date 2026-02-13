@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/UI/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import { Input } from '@/components/UI/input';
+import { Label } from '@/components/UI/label';
+import { Textarea } from '@/components/UI/textarea';
 
 export default function ItemDialog({ type, onCreate }) {
   const [open, setOpen] = useState(false);
