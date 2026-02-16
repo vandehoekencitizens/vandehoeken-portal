@@ -12,19 +12,30 @@ import {
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/UI/card';
 import { Badge } from '@/components/UI/badge';
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns'; // Added isValid
 
 export default function TransactionHistory({ userEmail }) {
   const { data: transactions = [], isLoading } = useQuery({
     queryKey: ['transactions', userEmail],
     queryFn: async () => {
+      if (!userEmail) return []; // Safety check
+      
       const sent = await base44.entities.Transaction.filter({ from_email: userEmail });
       const received = await base44.entities.Transaction.filter({ to_email: userEmail });
-      return [...sent, ...received].sort((a, b) => 
-        new Date(b.created_date) - new Date(a.created_date)
+      
+      // Safety: Ensure we have arrays before spreading to avoid "r.map" errors
+      const sentArr = Array.isArray(sent) ? sent : [];
+      const receivedArr = Array.isArray(received) ? received : [];
+      
+      return [...sentArr, ...receivedArr].sort((a, b) => 
+        new Date(b.created_date || 0) - new Date(a.created_date || 0)
       );
-    }
+    },
+    enabled: !!userEmail
   });
+
+  // Safety: Ensure transactions is always an array for the .map() below
+  const safeTransactions = Array.isArray(transactions) ? transactions : [];
 
   const getIcon = (type) => {
     switch(type) {
@@ -61,15 +72,21 @@ export default function TransactionHistory({ userEmail }) {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        {transactions.length > 0 ? (
+        {safeTransactions.length > 0 ? (
           <div className="space-y-3">
-            {transactions.map((txn, idx) => {
+            {safeTransactions.map((txn, idx) => {
               const Icon = getIcon(txn.type);
               const isDebit = txn.from_email === userEmail;
               
+              // Safety: Fix "Invalid Time" error
+              const txnDate = new Date(txn.created_date);
+              const displayDate = isValid(txnDate) 
+                ? format(txnDate, 'MMM d, yyyy h:mm a')
+                : 'Pending Date...';
+              
               return (
                 <motion.div
-                  key={txn.id}
+                  key={txn.id || idx} // Fallback key
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
@@ -85,9 +102,7 @@ export default function TransactionHistory({ userEmail }) {
                       <p className="font-semibold text-slate-800">
                         {txn.description || txn.item_name || 'Transaction'}
                       </p>
-                      <p className="text-xs text-slate-500">
-                        {format(new Date(txn.created_date), 'MMM d, yyyy h:mm a')}
-                      </p>
+                      <p className="text-xs text-slate-500">{displayDate}</p>
                       {txn.to_vnt_id && txn.from_vnt_id && (
                         <p className="text-xs text-slate-500">
                           {isDebit ? `To: ${txn.to_vnt_id}` : `From: ${txn.from_vnt_id}`}
@@ -99,10 +114,11 @@ export default function TransactionHistory({ userEmail }) {
                     <p className={`text-lg font-bold ${
                       isDebit ? 'text-red-600' : 'text-green-600'
                     }`}>
-                      {isDebit ? '-' : '+'}{txn.amount.toLocaleString()} VHS
+                      {/* Safety: toLocaleString() check */}
+                      {isDebit ? '-' : '+'}{(txn.amount || 0).toLocaleString()} VHS
                     </p>
                     <Badge variant={txn.status === 'completed' ? 'default' : 'secondary'} className="text-xs">
-                      {txn.status}
+                      {txn.status || 'pending'}
                     </Badge>
                   </div>
                 </motion.div>
