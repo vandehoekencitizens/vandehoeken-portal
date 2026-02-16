@@ -83,7 +83,9 @@ export default function Home() {
               <div className="space-y-3">
                 <Button 
                   size="lg" 
-                  onClick={() => base44.auth.redirectToLogin('/')}
+
+// To this (replace with your actual Netlify link):
+onClick={() => base44.auth.redirectToLogin('https://vandehoekencitizens.netlify.app/')}
                   className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold h-12 rounded-xl"
                 >
                   <Shield className="w-5 h-5 mr-2" />
